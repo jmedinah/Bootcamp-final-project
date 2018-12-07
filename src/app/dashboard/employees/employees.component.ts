@@ -9,7 +9,14 @@ import { Employee } from "./employee.model";
   styleUrls: ["./employees.component.scss"]
 })
 export class EmployeesComponent implements OnInit {
-  displayedColumns: string[] = ["id", "name", "company", "age", "color"];
+  displayedColumns: string[] = [
+    "id",
+    "name",
+    "company",
+    "projectId",
+    "age",
+    "color"
+  ];
   dataSource: MatTableDataSource<Employee>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -19,14 +26,12 @@ export class EmployeesComponent implements OnInit {
   constructor(private http: HttpClient) {
     this.http.get(this.url).subscribe((data: Employee[]) => {
       this.dataSource = new MatTableDataSource(data);
-      console.log(this.dataSource);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     });
   }
 
-  ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
+  ngOnInit() {}
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();

@@ -19,14 +19,12 @@ export class ProjectsComponent implements OnInit {
   constructor(private http: HttpClient) {
     this.http.get(this.url).subscribe((data: Project[]) => {
       this.dataSource = new MatTableDataSource(data);
-      console.log(this.dataSource);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     });
   }
 
-  ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
+  ngOnInit() {}
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
