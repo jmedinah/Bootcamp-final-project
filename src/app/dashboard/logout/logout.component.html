@@ -1,0 +1,4 @@
+<div *ngIf="afAuth.user | async as user" class="content">
+  <h2>{{ user.displayName }}</h2>
+  <button (click)="logout()" class="content__content" mat-flat-button color="primary">Logout</button>
+</div>

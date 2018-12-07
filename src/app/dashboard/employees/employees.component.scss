@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px;
+  font-size: 2em;
+
+  &__icon {
+    font-size: 40px;
+  }
+}
+
+.content {
+  width: 90%;
+  margin: auto
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 25%;
+}

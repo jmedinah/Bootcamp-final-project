@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <div style="width: 100%">
+    <app-logout></app-logout>
+  </div>
+</mat-toolbar>
+<div class="subheader">
+  <button class="subheader__btn-menu" mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <a mat-menu-item [routerLink]="['./employees']" routerLinkActive="router-link-active">Employess </a>
+    <a mat-menu-item [routerLink]="['./projects']" routerLinkActive="router-link-active">Projects</a>
+  </mat-menu>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>

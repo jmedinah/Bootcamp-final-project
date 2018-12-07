@@ -1,0 +1,20 @@
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin: 50px;
+
+  &__number {
+    font-size: 10em;
+    color: #00BCD4;
+  }
+
+  &__title {
+    font-size: 3em;
+    font-weight: bold;
+  }
+  &__subtitle {
+    font-size: 1em;
+  }
+}
